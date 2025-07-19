@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
 export default function HeroSection() {
-  return (
+  return (    
     <section className="relative h-[80vh] md:h-[90vh] w-full flex items-center justify-center text-center overflow-hidden">
       <Image
         src="/luxurious-villa-with-modern-architectural-design.png" // Updated image source
@@ -50,7 +50,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col items-center"
           >
-            <span className="text-5xl font-bold text-gold-500">50+</span>
+            <span className="text-5xl font-bold text-gold-500">10+</span>
             <span className="text-gray-300 text-sm uppercase tracking-wider mt-2">PROJECTS COMPLETED</span>
           </motion.div>
           <motion.div
@@ -59,7 +59,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="flex flex-col items-center"
           >
-            <span className="text-5xl font-bold text-gold-500">15+</span>
+            <span className="text-5xl font-bold text-gold-500">10+</span>
             <span className="text-gray-300 text-sm uppercase tracking-wider mt-2">YEARS EXPERIENCE</span>
           </motion.div>
           <motion.div
@@ -79,7 +79,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
           <Link href="/projects">
-            <Button className="px-8 py-6 text-lg bg-gold-500 text-gray-900 hover:bg-gold-600 transition-colors flex items-center">
+            <Button className="px-8 py-6 text-lg bg-gold-500 text-gold-900 hover:bg-gold-600 transition-colors flex items-center">
               VIEW OUR PROJECTS <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

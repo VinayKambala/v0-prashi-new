@@ -48,12 +48,18 @@ export default function PremiumHeader() {
 
     if (isHomePage) {
       return {
-        headerBg: isScrolled ? "bg-warm-white/95 backdrop-blur-md shadow-lg border-b border-gold/20" : "bg-transparent",
+        headerBg: isScrolled
+          ? "bg-warm-white/95 backdrop-blur-md shadow-lg border-b border-gold/20"
+          : "bg-transparent",
         textColor: "text-dark-gray",
         activeColor: "text-gold",
-        hoverColor: "hover:text-gold",
-        homeStyle: "text-gold bg-gold/10 px-4 py-2 rounded-lg border border-gold/30 shadow-md",
-        ctaStyle: "border-gold/40 text-gold hover:bg-gold hover:text-warm-white shadow-md",
+        hoverColor: isScrolled ? "hover:text-gold" : "hover:text-gold-300",
+        homeStyle: isScrolled
+          ? "text-gold bg-gold/10 px-4 py-2 rounded-lg border border-gold/30 shadow-md"
+          : "text-warm-white bg-white/10 px-4 py-2 rounded-lg border border-white/30",
+        ctaStyle: isScrolled
+          ? "border-gold/40 text-gold hover:bg-gold hover:text-warm-white shadow-md"
+          : "border-warm-white/80 text-warm-white hover:bg-warm-white hover:text-dark-gray",
       }
     } else if (isAboutPage) {
       return {
@@ -172,13 +178,15 @@ export default function PremiumHeader() {
       }`}
     >
       <div className="container-luxury">
-        <div className="flex justify-between items-center h-20 md:h-24">
+        <div className="flex justify-between items-center h-20 md:h-24 relative">
           {/* Logo */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 ml-4"> {/* Absolutely position logo */}
+
           <Link href="/" className="relative z-10 flex-shrink-0">
             <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <div className="relative h-10 w-10 md:h-12 md:w-12">
                 <Image
-                  src="/prashi-logo-symbol.jpeg"
+                  src="/logo.png"
                   alt="Prashi Group Logo Symbol"
                   width={48}
                   height={48}
@@ -191,13 +199,13 @@ export default function PremiumHeader() {
                 />
               </div>
               <div className="flex flex-col">
-                <div className="font-serif text-lg md:text-xl">
+                <div className={`font-serif text-lg md:text-xl ${styling.textColor}`}>
                   <span className="text-gold">Prashi</span>
-                  <span className="text-dark-gray font-light ml-1">group</span>
+                  <span className="font-light ml-1">group</span>
                 </div>
               </div>
             </motion.div>
-          </Link>
+          </Link></div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-center">

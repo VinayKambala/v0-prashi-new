@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -49,7 +50,7 @@ export default function AboutPage() {
   ]
 
   const achievements = [
-    { icon: <Building2 className="h-8 w-8" />, number: "50+", label: "Projects Delivered", sublabel: "Since 2014" },
+    { icon: <Building2 className="h-8 w-8" />, number: "10+", label: "Projects Delivered", sublabel: "Since 2014" },
     { icon: <Users className="h-8 w-8" />, number: "1000+", label: "Happy Families", sublabel: "Across Bengaluru" },
     { icon: <Clock className="h-8 w-8" />, number: "10+", label: "Years Experience", sublabel: "Combined Legacy" },
     { icon: <Shield className="h-8 w-8" />, number: "100%", label: "Quality Assurance", sublabel: "Every Project" },
@@ -116,13 +117,17 @@ export default function AboutPage() {
               </p>
 
               <div className="flex flex-wrap gap-4">
+                <Link href="/projects">
                 <Button className="bg-gold hover:bg-gold-dark text-warm-white px-8 py-3 text-lg">Our Projects</Button>
+                </Link>
+                <Link href="/contact">
                 <Button
                   variant="outline"
                   className="border-gold text-gold hover:bg-gold/10 px-8 py-3 text-lg bg-transparent"
                 >
                   Contact Us
                 </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -134,7 +139,7 @@ export default function AboutPage() {
             >
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/construction-team-work.jpg"
+                  src="/modern-construction-site.png"
                   alt="Prashi Group Leadership Team"
                   fill
                   className="object-cover"
@@ -396,16 +401,20 @@ export default function AboutPage() {
               Join over 1000 satisfied families who have trusted Prashi Group with their most important investment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/projects">
               <Button className="bg-gold hover:bg-gold-dark text-warm-white px-8 py-3 text-lg">
                 <MapPin className="h-5 w-5 mr-2" />
                 View Our Projects
               </Button>
+              </Link>
+              <Link href="/contact">
               <Button
                 variant="outline"
                 className="border-gold text-gold hover:bg-gold/10 px-8 py-3 text-lg bg-transparent"
               >
                 Schedule a Meeting
               </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
