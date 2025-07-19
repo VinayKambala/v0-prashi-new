@@ -132,7 +132,7 @@ export default function ProjectsPage() {
                       ${
                         activeCategory === category.id
                           ? "bg-gold text-obsidian border-gold shadow-gold-md"
-                          : "bg-transparent text-white border-gold/30 hover:border-gold/60 hover:bg-gold/5"
+                          : "bg-transparent text-black border-gold/30 hover:border-gold/60 hover:bg-gold/5"
                       }
                     `}
                     whileHover={{ scale: 1.02 }}
@@ -143,7 +143,7 @@ export default function ProjectsPage() {
                       <span
                         className={`
                         text-xs px-1.5 py-0.5 rounded-full
-                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-gold/20 text-gold"}
+                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-obsidian/20 text-obsidian"}
                       `}
                       >
                         {category.count}
@@ -180,11 +180,11 @@ export default function ProjectsPage() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span className="truncate">{category.label}</span>
+                      <span className="truncate text-black">{category.label}</span>
                       <span
                         className={`
                         text-xs px-1.5 py-0.5 rounded-full
-                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-gold/20 text-gold"}
+                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-obsidian/20 text-gold"}
                       `}
                       >
                         {category.count}
@@ -244,10 +244,10 @@ export default function ProjectsPage() {
                             px-3 py-1 text-xs uppercase tracking-wider font-medium
                             ${
                               project.category === "ongoing"
-                                ? "bg-blue-500/90 text-white"
+                                ? "bg-blue-500/90 text-black"
                                 : project.category === "completed"
-                                  ? "bg-green-500/90 text-white"
-                                  : "bg-orange-500/90 text-white"
+                                  ? "bg-green-500/90 text-black"
+                                  : "bg-orange-500/90 text-black"
                             }
                           `}
                           >
@@ -259,25 +259,25 @@ export default function ProjectsPage() {
                       {/* Project Details */}
                       <div className="p-6 space-y-4">
                         <div>
-                          <h3 className="text-white text-lg lg:text-xl font-serif mb-2 leading-tight">
+                          <h3 className="text-gold text-lg lg:text-xl font-serif mb-2 leading-tight">
                             {project.title}
                           </h3>
-                          <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                          <div className="flex items-center gap-2 text-gold/60 text-sm mb-2">
                             <MapPin className="h-4 w-4 flex-shrink-0" />
                             <span className="truncate">{project.location}</span>
                           </div>
                           <span className="text-gold text-sm">{project.type}</span>
                         </div>
 
-                        <p className="text-white/70 text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                        <p className="text-gold/70 text-sm leading-relaxed line-clamp-2">{project.description}</p>
 
                         {/* Project Info Grid */}
                         <div className="grid grid-cols-1 gap-3 text-sm">
-                          <div className="flex items-center gap-2 text-white/60">
+                          <div className="flex items-center gap-2 text-gold/60">
                             <Building className="h-4 w-4 text-gold flex-shrink-0" />
                             <span className="truncate">{project.units}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-white/60">
+                          <div className="flex items-center gap-2 text-gold/60">
                             <Calendar className="h-4 w-4 text-gold flex-shrink-0" />
                             <span>{project.completion}</span>
                           </div>
@@ -326,8 +326,8 @@ export default function ProjectsPage() {
                       </>
                     ) : activeCategory === "ongoing" ? (
                       <>
-                        <h3 className="text-white text-xl lg:text-2xl font-serif mb-4">No Ongoing Projects</h3>
-                        <p className="text-white/60 text-base mb-8 leading-relaxed">
+                        <h3 className="text-black text-xl lg:text-2xl font-serif mb-4">No Ongoing Projects</h3>
+                        <p className="text-black/60 text-base mb-8 leading-relaxed">
                           We currently don't have any ongoing projects. Please check our completed projects or stay
                           tuned for future developments.
                         </p>

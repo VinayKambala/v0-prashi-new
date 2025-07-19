@@ -44,14 +44,14 @@ export default function PremiumHeader() {
     const isContactPage = pathname === "/contact"
     const isProjectsPage = pathname.startsWith("/projects")
     const isNewsPage = pathname === "/news"
-    const isPropertiesPage = pathname === "/properties"
+    const isPropertiesPage = pathname.startsWith("/properties")
 
     if (isHomePage) {
       return {
         headerBg: isScrolled
           ? "bg-warm-white/95 backdrop-blur-md shadow-lg border-b border-gold/20"
           : "bg-transparent",
-        textColor: "text-dark-gray",
+        textColor: isScrolled ? "text-dark-gray" : "text-dark-gray",
         activeColor: "text-gold",
         hoverColor: isScrolled ? "hover:text-gold" : "hover:text-gold-300",
         homeStyle: isScrolled
@@ -86,13 +86,17 @@ export default function PremiumHeader() {
     } else if (isProjectsPage) {
       return {
         headerBg: isScrolled
-          ? "bg-warm-white/98 backdrop-blur-md shadow-xl border-b border-gold/25"
-          : "bg-warm-white/95 backdrop-blur-sm shadow-lg border-b border-gold/15",
-        textColor: "text-dark-gray",
+          ? "bg-warm-white/95 backdrop-blur-md shadow-lg border-b border-gold/20"
+          : "bg-transparent",
+        textColor: isScrolled ? "text-dark-gray" : "text-dark-gray",
         activeColor: "text-gold",
-        hoverColor: "hover:text-gold",
-        homeStyle: "text-gold bg-gold/15 px-4 py-2 rounded-lg border border-gold/35 shadow-lg",
-        ctaStyle: "border-gold/45 text-gold hover:bg-gold hover:text-warm-white shadow-lg",
+        hoverColor: isScrolled ? "hover:text-gold" : "hover:text-gold-300",
+        homeStyle: isScrolled
+          ? "text-dark-gray hover:text-gold"
+          : "text-dark-gray hover:text-gold-300",
+        ctaStyle: isScrolled
+          ? "border-gold/40 text-gold hover:bg-gold hover:text-warm-white shadow-md"
+          : "border-warm-white/80 text-warm-white hover:bg-warm-white hover:text-dark-gray",
       }
     } else if (isNewsPage) {
       return {
@@ -108,13 +112,17 @@ export default function PremiumHeader() {
     } else if (isPropertiesPage) {
       return {
         headerBg: isScrolled
-          ? "bg-warm-white/98 backdrop-blur-md shadow-xl border-b border-gold/25"
-          : "bg-warm-white/95 backdrop-blur-sm shadow-lg border-b border-gold/15",
-        textColor: "text-dark-gray",
+          ? "bg-warm-white/95 backdrop-blur-md shadow-lg border-b border-gold/20"
+          : "bg-transparent",
+        textColor: isScrolled ? "text-dark-gray" : "text-warm-white",
         activeColor: "text-gold",
-        hoverColor: "hover:text-gold",
-        homeStyle: "text-gold bg-gold/15 px-4 py-2 rounded-lg border border-gold/40 shadow-lg",
-        ctaStyle: "border-gold/50 text-gold hover:bg-gold hover:text-warm-white shadow-lg",
+        hoverColor: isScrolled ? "hover:text-gold" : "hover:text-gold-300",
+        homeStyle: isScrolled
+          ? "text-dark-gray hover:text-gold"
+          : "text-warm-white hover:text-gold-300",
+        ctaStyle: isScrolled
+          ? "border-gold/40 text-gold hover:bg-gold hover:text-warm-white shadow-md"
+          : "border-warm-white/80 text-warm-white hover:bg-warm-white hover:text-dark-gray",
       }
     } else {
       // Default styling for other pages
@@ -145,7 +153,6 @@ export default function PremiumHeader() {
     },
     { name: "About", path: "/about" },
     { name: "News", path: "/news" },
-    { name: "Properties", path: "/properties" },
     { name: "Contact", path: "/contact" },
   ]
 
@@ -199,7 +206,7 @@ export default function PremiumHeader() {
                 />
               </div>
               <div className="flex flex-col">
-                <div className={`font-serif text-lg md:text-xl ${styling.textColor}`}>
+                <div className={`font-serif text-lg md:text-xl ${styling.textColor} transition-colors duration-300`}>
                   <span className="text-gold">Prashi</span>
                   <span className="font-light ml-1">group</span>
                 </div>

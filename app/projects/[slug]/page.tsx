@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useParams } from "next/navigation"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -111,13 +112,8 @@ const projectData = {
   },
 }
 
-interface ProjectPageProps {
-  params: {
-    slug: string
-  }
-}
-
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage() {
+  const params = useParams()
   const [activeTab, setActiveTab] = useState("overview")
   const project = projectData[params.slug as keyof typeof projectData]
 
@@ -198,7 +194,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       {/* Content Tabs */}
       <div className="container-luxury py-12">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-charcoal border border-gold/10">
+          <TabsList className="grid w-full grid-cols-4 bg-white border border-gold/10">
             <TabsTrigger value="overview" className="data-[state=active]:bg-gold data-[state=active]:text-obsidian">
               Overview
             </TabsTrigger>
@@ -219,8 +215,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <TabsContent value="overview" className="mt-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-2xl font-serif text-white mb-6">About the Project</h2>
-                <p className="text-white/80 leading-relaxed mb-8">{project.description}</p>
+                <h2 className="text-2xl font-serif text-gold mb-6">About the Project</h2>
+                <p className="text-black/80 leading-relaxed mb-8">{project.description}</p>
 
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-charcoal p-6 border border-gold/10">
@@ -237,44 +233,44 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               <div>
-                <h2 className="text-2xl font-serif text-white mb-6">Project Highlights</h2>
+                <h2 className="text-2xl font-serif text-gold mb-6">Project Highlights</h2>
                 <div className="space-y-4">
                   {project.id === 1 ? (
                     <>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Premium 2 & 3 BHK apartments in a 4-floor residential complex</p>
+                        <p className="text-black/80">Premium 2 & 3 BHK apartments in a 4-floor residential complex</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Strategic location in Nagondanahalli Village, Whitefield</p>
+                        <p className="text-black/80">Strategic location in Nagondanahalli Village, Whitefield</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Modern amenities and premium specifications</p>
+                        <p className="text-black/80">Modern amenities and premium specifications</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Completed and ready for possession</p>
+                        <p className="text-black/80">Completed and ready for possession</p>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Flagship project in Hosanara with G+3 apartment complex</p>
+                        <p className="text-black/80">Flagship project in Hosanara with G+3 apartment complex</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">100% Vastu compliant design for positive living</p>
+                        <p className="text-black/80">100% Vastu compliant design for positive living</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Uninterrupted power and water supply for worry-free living</p>
+                        <p className="text-black/80">Uninterrupted power and water supply for worry-free living</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-white/80">Modern architecture with spacious and bright interiors</p>
+                        <p className="text-black/80">Modern architecture with spacious and bright interiors</p>
                       </div>
                     </>
                   )}
@@ -286,7 +282,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <TabsContent value="specifications" className="mt-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl font-serif text-white mb-6">Technical Specifications</h2>
+                <h2 className="text-2xl font-serif text-gold mb-6">Technical Specifications</h2>
                 <div className="space-y-6">
                   <div className="bg-charcoal p-6 border border-gold/10">
                     <h3 className="text-gold font-medium mb-3">Structure</h3>
@@ -476,7 +472,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     <p className="text-white/80 mb-4">
                       Experience the luxury and comfort of {project.title} firsthand. Schedule a site visit today.
                     </p>
+                    <Link href="/contact">
                     <Button className="bg-gold text-obsidian hover:bg-gold/90">Schedule Visit</Button>
+                    </Link>
                   </div>
                 </div>
               </div>

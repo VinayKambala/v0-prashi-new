@@ -89,9 +89,9 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white font-serif">Get in Touch</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gold font-serif">Get in Touch</h2>
                   <div className="w-16 h-px bg-gradient-to-r from-gold to-transparent"></div>
-                  <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
+                  <p className="text-obsidian/70 text-lg leading-relaxed max-w-2xl">
                     Ready to embark on your real estate journey? Our dedicated team is here to provide expert guidance
                     and personalized solutions for all your property needs in Bangalore.
                   </p>
@@ -104,8 +104,8 @@ export default function ContactPage() {
                         <MapPin className="h-6 w-6 text-gold" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-white text-lg">Our Location</h3>
-                        <p className="text-white/70 leading-relaxed">
+                        <h3 className="font-semibold text-gold text-lg">Our Location</h3>
+                        <p className="text-obsidian/70 leading-relaxed">
                           21, Whitefield - Hoskote Rd, Vastu Bhoomi, Krishnarajapuram, Bengaluru, Karnataka 560066
                         </p>
                       </div>
@@ -118,9 +118,9 @@ export default function ContactPage() {
                         <Phone className="h-6 w-6 text-gold" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-white text-lg">Phone Number</h3>
+                        <h3 className="font-semibold text-gold text-lg">Phone Number</h3>
                         <div className="space-y-1">
-                          <p className="text-white/70">
+                          <p className="text-obsidian/70">
                             <a href="tel:+918971199588" className="hover:text-gold transition-colors">
                               +91 89711 99588
                             </a>
@@ -141,14 +141,14 @@ export default function ContactPage() {
                         <Mail className="h-6 w-6 text-gold" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-white text-lg">Email Address</h3>
+                        <h3 className="font-semibold text-gold text-lg">Email Address</h3>
                         <div className="space-y-1">
-                          <p className="text-white/70">
+                          <p className="text-obsidian/70">
                             <a href="mailto:info@prashigroup.com" className="hover:text-gold transition-colors">
                               info@prashigroup.com
                             </a>
                           </p>
-                          <p className="text-white/70">
+                          <p className="text-obsidian/70">
                             <a href="mailto:sales@prashigroup.com" className="hover:text-gold transition-colors">
                               sales@prashigroup.com
                             </a>
@@ -164,8 +164,8 @@ export default function ContactPage() {
                         <Clock className="h-6 w-6 text-gold" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="font-semibold text-white text-lg">Office Hours</h3>
-                        <div className="space-y-1 text-white/70">
+                        <h3 className="font-semibold text-gold text-lg">Office Hours</h3>
+                        <div className="space-y-1 text-obsidian/70">
                           <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                           <p>Saturday: 10:00 AM - 4:00 PM</p>
                           <p>Sunday: Closed (By appointment only)</p>
@@ -177,7 +177,7 @@ export default function ContactPage() {
 
                 {/* Enhanced Office Location Map */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-white font-serif">Find Us in Bangalore</h3>
+                  <h3 className="text-2xl font-bold text-gold font-serif">Find Us in Bangalore</h3>
                   <div className="relative h-[400px] w-full rounded-lg overflow-hidden border border-gold/20 hover:border-gold/40 transition-all duration-300 group">
                     <Image
                       src="/bangalore-city-map.png"
@@ -204,8 +204,8 @@ export default function ContactPage() {
                     {/* Interactive Elements */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="glass-effect p-6 md:p-8 max-w-md text-center border border-gold/20 group-hover:border-gold/40 transition-all duration-300">
-                        <h4 className="text-xl md:text-2xl font-serif font-light text-white mb-3">Visit Our Office</h4>
-                        <p className="text-white/70 mb-4 leading-relaxed">
+                        <h4 className="text-xl md:text-2xl font-serif font-light text-gold mb-3">Visit Our Office</h4>
+                        <p className="text-obsidian/70 mb-4 leading-relaxed">
                           Located in the heart of Bangalore's tech corridor, easily accessible from major landmarks.
                         </p>
                         <div className="w-12 h-px bg-gold/50 mx-auto mb-3"></div>
@@ -261,9 +261,9 @@ export default function ContactPage() {
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="space-y-3">
-                        <h3 className="text-2xl font-bold text-white font-serif drop-shadow-sm">Send Message</h3>
+                        <h3 className="text-2xl font-bold text-gold font-serif drop-shadow-sm">Send Message</h3>
                         <div className="w-12 h-px bg-gradient-to-r from-gold to-transparent"></div>
-                        <p className="text-white/90 leading-relaxed">
+                        <p className="text-obsidian/90 leading-relaxed">
                           Fill out the form below and we'll get back to you within 24 hours.
                         </p>
                       </div>
