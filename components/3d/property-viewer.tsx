@@ -169,7 +169,7 @@ export default function PropertyViewer({
               <Html center>
                 <div className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Loading 3D model...</span>
+                  <span>Loading ...</span>
                 </div>
               </Html>
             }
