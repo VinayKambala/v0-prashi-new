@@ -42,10 +42,10 @@ export default function Logo({
         <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
           <div className={`relative ${sizeClasses[size]} flex-shrink-0`}>
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Prashi Group Logo Symbol"
               width={40} // Explicitly set width to 40px
-              height={40} // Explicitly set height to 40px
+              height={50} // Explicitly set height to 40px
               className="object-contain" // Ensure the entire image is visible
               priority
               onError={(e) => {
@@ -80,7 +80,7 @@ export default function Logo({
         {showSymbol && (
           <div className={`relative ${sizeClasses[size]} flex-shrink-0`}>
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Prashi Group Logo Symbol"
               width={40} // Explicitly set width to 40px
               height={40} // Explicitly set height to 40px
