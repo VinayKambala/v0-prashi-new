@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
                <li>
                 <Link
-                  href="/projectsstatus=completed"
+                  href="/projects?status=completed"
                   className="text-white/70 hover:text-[#d4af37] transition-colors"
                 >
                   Completed
@@ -144,7 +144,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-[#d4af37]/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/50 text-sm">© 2023 Prashigroup. All rights reserved.</p>
+            <p className="text-white/50 text-sm">© 2025 Prashigroup. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy-policy" className="text-white/50 hover:text-[#d4af37] text-sm">
                 Privacy Policy

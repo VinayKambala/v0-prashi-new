@@ -64,11 +64,11 @@ const projectData = {
     id: 2,
     title: "Sanvi Residency",
     subtitle: "Your dream dwelling awaits",
-    location: "Hosanara, New Bangalore, Karnataka",
+    location: "33,Horamavu Agara Road,Rajanna Layout,Bangalore, Karnataka, 560043",
     type: "Residential Apartments",
     status: "Completed",
     completion: "Delivered",
-    units: "2 & 3 BHK Apartments",
+    units: "48 units with Commencement certificate and occupancy certificate.",
     description:
       "At Sanvi structures we realize the basic need of yours for a dwelling of your dream. A dwelling is not just brick, mortar and a roof over your head. It's about a space you will be co-habiting with your loved ones. It's an inspiration that drives you to get up in the morning fresh and take on the world and the challenges. It's also your retreat from the hustle bustle of the outside world, where you spend your leisure, rejuvenating your body, spirit and mind. And to give you the best when it comes to your living space we follow the age-old practices of transparency, commitment, quality practices, trust etc.",
     images: {
@@ -79,6 +79,56 @@ const projectData = {
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency-floor.png-ekdfRSnX0QA2DwDVQfe2S7lqBO1CrD.jpeg",
       typicalFloors:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency-view.png-nJ2O0sEa1Ln3JYBVh5VfGnn1kNmpeX.jpeg",
+    },
+    amenities: [
+      "G+3 Apartment Complex",
+      "100% Vastu Compliant",
+      "Uninterrupted Power Supply",
+      "24/7 Water Supply",
+      "Modern Architecture",
+      "Spacious Bedrooms",
+      "Bright Living Rooms",
+      "Premium Finishes",
+      "Covered Parking",
+      "Landscaped Gardens",
+      "Security Systems",
+      "Community Spaces",
+    ],
+    specifications: {
+      structure: "G+3 apartment complex with modern RCC framed structure",
+      walls: "Premium quality construction with proper insulation",
+      flooring: "High-quality vitrified tiles in all living areas",
+      kitchen: "Modular kitchen with granite countertops and modern fittings",
+      doors: "Premium quality doors with modern hardware",
+      windows: "Large windows for natural light and ventilation",
+      electrical: "Concealed wiring with adequate power points throughout",
+      painting: "Premium quality paints for interior and exterior",
+      backup: "Uninterrupted power supply with backup systems",
+      lifts: "Modern elevator systems for easy access",
+      water: "24/7 water supply with proper storage systems",
+      toilets: "Modern bathroom fittings with premium tiles",
+      common: "Well-designed common areas with quality finishes",
+    },
+  },
+  "prashi-residency": {
+    id: 3,
+    title: "Prashi Residency",
+    subtitle: "Your dream dwelling awaits",
+    location: "Belathur, WhiteField, Bangalore, Karnataka",
+    type: "Residential Apartments",
+    status: "Ongoing",
+    completion: "Ongoing",
+    units: "2 & 3 BHK Apartments",
+    description:
+      "At Prashi structures we realize the basic need of yours for a dwelling of your dream. A dwelling is not just brick, mortar and a roof over your head. It's about a space you will be co-habiting with your loved ones. It's an inspiration that drives you to get up in the morning fresh and take on the world and the challenges. It's also your retreat from the hustle bustle of the outside world, where you spend your leisure, rejuvenating your body, spirit and mind. And to give you the best when it comes to your living space we follow the age-old practices of transparency, commitment, quality practices, trust etc.",
+    images: {
+      hero: "/prashi-residency.jpeg",
+      specifications:
+        "prashi-residency-specification.jpeg",
+      floorPlan:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency-floor.png-ekdfRSnX0QA2DwDVQfe2S7lqBO1CrD.jpeg",
+      typicalFloors:
+        "/prashi-residency.jpeg",
     },
     amenities: [
       "G+3 Apartment Complex",
@@ -334,7 +384,7 @@ export default function ProjectPage() {
           <TabsContent value="floor-plans" className="mt-8">
             <div className="space-y-12">
               <div>
-                <h2 className="text-2xl font-serif text-white mb-6">Floor Plans & Layout</h2>
+                <h2 className="text-2xl font-serif text-gold mb-6">Floor Plans & Layout</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
                     <h3 className="text-xl text-gold mb-4">

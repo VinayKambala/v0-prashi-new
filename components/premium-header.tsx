@@ -308,10 +308,12 @@ export default function PremiumHeader() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
+            <Link href="/contact">
             <Button className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${styling.ctaStyle}`}>
               Get Quote
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+            </Link>
           </motion.div>
 
           {/* Enhanced Mobile Menu Button */}
@@ -443,11 +445,12 @@ export default function PremiumHeader() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                 >
+                   <Link href="/contact">
                   <Button className="w-full bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-white py-4 rounded-2xl font-semibold text-lg shadow-lg">
                     Get Quote
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-
+                  </Link>
                   <div className="flex items-center justify-center gap-2 p-4 bg-gray-50 rounded-2xl">
                     <Phone className="h-5 w-5 text-gold" />
                     <span className="text-gray-600 font-medium">+91 89711 99588</span>
