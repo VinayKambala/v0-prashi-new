@@ -1,41 +1,51 @@
-import { type NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
+  const { name, email, phone, project, message } = await req.json();
+
+  if (!name || !email || !phone || !project || !message) {
+    return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.hostinger.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.HOSTINGER_SMTP_USER,
+      pass: process.env.HOSTINGER_SMTP_PASS,
+    },
+  });
+
   try {
-    const data = await request.json()
+    // Send mail to sales@miolo.io
+    await transporter.sendMail({
+      from: "sales@miolo.in",
+      to: "sales@miolo.in",
+      subject: "New Contact Message",
+      text: `${message}\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject: ${project}`,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Phone:</strong> ${phone}</p>
+             <p><strong>Project:</strong> ${project}</p>
+             <p><strong>Message:</strong><br/>${message}</p>`,
+    });
 
-    // Here you would typically:
-    // 1. Validate the data
-    // 2. Store in a database
-    // 3. Send an email notification
+    // Auto-reply to user
+    await transporter.sendMail({
+      from: "sales@miolo.in",
+      to: email,
+      subject: "Thank you for contacting Miolo",
+      text: `Dear ${name},\n\nThank you for reaching out to Miolo. We have received your message and our team will get back to you soon.\n\nBest regards,\nMiolo Team`,
+      html: `<p>Dear ${name},</p>
+             <p>Thank you for reaching out to <strong>Miolo</strong>. We have received your message and our team will get back to you soon.</p>
+             <p>Best regards,<br/>Miolo Team</p>`,
+    });
 
-    // For validation example:
-    if (!data.name || !data.email || !data.phone || !data.message) {
-      return NextResponse.json({ success: false, message: "Missing required fields" }, { status: 400 })
-    }
-
-    // Example email sending logic (you'd need to implement this with a service like SendGrid, Mailgun, etc.)
-    // await sendEmail({
-    //   to: "info@prashigroup.com",
-    //   subject: `New Contact Form Submission - ${data.inquiry}`,
-    //   text: `
-    //     Name: ${data.name}
-    //     Email: ${data.email}
-    //     Phone: ${data.phone}
-    //     Inquiry Type: ${data.inquiry}
-    //     Message: ${data.message}
-    //   `
-    // });
-
-    return NextResponse.json({
-      success: true,
-      message: "Form submitted successfully",
-    })
+    return NextResponse.json({ message: "Message sent successfully!" }, { status: 200 });
   } catch (error) {
-    console.error("Contact form error:", error)
-    return NextResponse.json(
-      { success: false, message: "An error occurred while processing your request" },
-      { status: 500 },
-    )
+    console.error("Error sending email:", error);
+    return NextResponse.json({ message: "Failed to send message." }, { status: 500 });
   }
 }

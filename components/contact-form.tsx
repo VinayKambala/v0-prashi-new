@@ -1,137 +1,120 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle2 } from "lucide-react"
-import { usePathname } from "next/navigation"
+import { useState } from "react";
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const pathname = usePathname()
+  const [form, setForm] = useState({ name: "", email: "", phone: "", project: "", message: "" });
+  const [status, setStatus] = useState("");
 
-  // Check if we're on a project page to adjust styling
-  const isProjectPage = pathname?.includes("/projects/")
-  const isDarkContext = pathname?.includes("/contact") || isProjectPage
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-    }, 1500)
-  }
-
-  if (isSubmitted) {
-    return (
-      <div className="h-full flex flex-col items-center justify-center text-center p-6">
-        <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 bg-gold/10">
-          <CheckCircle2 className="h-10 w-10 text-gold" />
-        </div>
-        <h3 className="text-2xl font-semibold text-dark-gray">Thank You!</h3>
-        <p className="mt-2 text-dark-gray/70">Your message has been received. Our team will get back to you shortly.</p>
-        <Button className="mt-6 bg-gold hover:bg-gold-dark text-warm-white" onClick={() => setIsSubmitted(false)}>
-          Send Another Message
-        </Button>
-      </div>
-    )
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    if (res.ok) setStatus("Message sent!");
+    else setStatus("Failed to send message.");
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-dark-gray">
-            Full Name <span className="text-red-500">*</span>
+    <form className="space-y-6 bg-white/90 p-8 rounded-2xl shadow-xl border border-gold/20" onSubmit={handleSubmit}>
+      <h3 className="text-2xl font-bold text-gold mb-4 text-center">Contact Our Experts</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gold mb-1" htmlFor="name">
+            Name
           </label>
-          <Input
+          <input
+            className="w-full px-4 py-2 rounded-lg border border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold bg-white text-obsidian"
+            type="text"
+            name="name"
             id="name"
             required
-            placeholder="John Doe"
-            className="h-12 bg-warm-white border-medium-gray text-dark-gray focus:border-gold focus:ring-gold/20"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Your Name"
           />
         </div>
-        <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium text-dark-gray">
-            Email <span className="text-red-500">*</span>
+        <div>
+          <label className="block text-sm font-medium text-gold mb-1" htmlFor="phone">
+            Phone Number
           </label>
-          <Input
-            id="email"
-            type="email"
-            required
-            placeholder="john@example.com"
-            className="h-12 bg-warm-white border-medium-gray text-dark-gray focus:border-gold focus:ring-gold/20"
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium text-dark-gray">
-            Phone Number <span className="text-red-500">*</span>
-          </label>
-          <Input
+          <input
+            className="w-full px-4 py-2 rounded-lg border border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold bg-white text-obsidian"
+            type="tel"
+            name="phone"
             id="phone"
             required
-            placeholder="+91 98765 43210"
-            className="h-12 bg-warm-white border-medium-gray text-dark-gray focus:border-gold focus:ring-gold/20"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Your Phone"
+            pattern="[0-9+\-\s]{7,15}"
           />
         </div>
-        <div className="space-y-2">
-          <label htmlFor="interest" className="text-sm font-medium text-dark-gray">
-            Interested In <span className="text-red-500">*</span>
-          </label>
-          <Select required>
-            <SelectTrigger
-              id="interest"
-              className="h-12 bg-warm-white border-medium-gray text-dark-gray focus:border-gold focus:ring-gold/20"
-            >
-              <SelectValue placeholder="Select an option" />
-            </SelectTrigger>
-            <SelectContent className="bg-warm-white border-medium-gray">
-              <SelectItem value="apartment">Apartment</SelectItem>
-              <SelectItem value="villa">Villa</SelectItem>
-              <SelectItem value="plot">Plot</SelectItem>
-              <SelectItem value="commercial">Commercial</SelectItem>
-              <SelectItem value="consultation">Free Consultation</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
       </div>
-
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-dark-gray">
-          Message <span className="text-red-500">*</span>
+      <div>
+        <label className="block text-sm font-medium text-gold mb-1" htmlFor="email">
+          Email
         </label>
-        <Textarea
-          id="message"
+        <input
+          className="w-full px-4 py-2 rounded-lg border border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold bg-white text-obsidian"
+          type="email"
+          name="email"
+          id="email"
           required
-          placeholder="Please provide details about your construction requirements..."
-          rows={4}
-          className="resize-none bg-warm-white border-medium-gray text-dark-gray focus:border-gold focus:ring-gold/20"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="you@email.com"
         />
       </div>
-
-      <Button
+      <div>
+        <label className="block text-sm font-medium text-gold mb-1" htmlFor="project">
+          Project Name
+        </label>
+        <input
+          className="w-full px-4 py-2 rounded-lg border border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold bg-white text-obsidian"
+          type="text"
+          name="project"
+          id="project"
+          required
+          value={form.project}
+          onChange={handleChange}
+          placeholder="Project you are interested in"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gold mb-1" htmlFor="message">
+          Message
+        </label>
+        <textarea
+          className="w-full px-4 py-2 rounded-lg border border-gold/30 focus:border-gold focus:ring-1 focus:ring-gold bg-white text-obsidian"
+          name="message"
+          id="message"
+          rows={5}
+          required
+          value={form.message}
+          onChange={handleChange}
+          placeholder="How can we help you?"
+        />
+      </div>
+      <button
         type="submit"
-        className="w-full h-12 text-base bg-gold hover:bg-gold-dark text-warm-white shadow-lg hover:shadow-xl transition-all duration-300"
-        disabled={isSubmitting}
+        className="w-full bg-gold hover:bg-gold-light text-white font-semibold py-2 rounded-lg transition-colors"
+        disabled={status === "Sending..."}
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </Button>
-
-      <p className="text-xs text-center leading-relaxed text-dark-gray/60">
-        By submitting this form, you agree to our privacy policy and terms of service.
-      </p>
+        {status === "Sending..." ? "Sending..." : "Send Message"}
+      </button>
+      {status && (
+        <div className={`text-center mt-2 text-sm ${status === "Message sent!" ? "text-green-600" : "text-red-600"}`}>
+          {status}
+        </div>
+      )}
     </form>
-  )
+  );
 }

@@ -190,28 +190,29 @@ export default function SanviSankalpamPage() {
             Explore the Details
           </h2>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-white rounded-xl shadow-lg p-2 sm:p-4 mb-4 sm:mb-8">
+            <TabsList className="flex justify-center gap-4 bg-white rounded-xl shadow-lg p-4 mb-10">
               <TabsTrigger
                 value="amenities"
-                className="py-2 px-4 sm:py-3 sm:px-6 text-base sm:text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
+                className="py-3 px-6 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
               >
                 Amenities
               </TabsTrigger>
               <TabsTrigger
                 value="specifications"
-                className="py-2 px-4 sm:py-3 sm:px-6 text-base sm:text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
+                className="py-3 px-6 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
               >
                 Specifications
               </TabsTrigger>
               <TabsTrigger
                 value="nearby"
-                className="py-2 px-4 sm:py-3 sm:px-6 text-base sm:text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
+                className="py-3 px-6 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-full transition-all"
               >
                 Nearby
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="amenities" className="mt-6 sm:mt-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+            <TabsContent value="amenities" className="mt-8">
+              <h3 className="text-2xl font-semibold text-center text-blue-700 mb-8">World-Class Amenities</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   { name: "Rooftop Infinity Pool", img: "https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg?auto=compress&w=600" },
                   { name: "State-of-the-art Gymnasium", img: "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600" },
@@ -226,8 +227,8 @@ export default function SanviSankalpamPage() {
                     key={i}
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: i * 0.07, duration: 0.5 }}
-                    className="bg-white p-4 rounded-2xl shadow-lg text-center flex flex-col items-center"
+                    transition={{ duration: 0.5, delay: i * 0.07 }}
+                    className="bg-white p-4 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col items-center"
                   >
                     <div className="relative w-20 h-20 mb-3 rounded-xl overflow-hidden shadow">
                       <Image
@@ -237,13 +238,22 @@ export default function SanviSankalpamPage() {
                         className="object-cover"
                       />
                     </div>
-                    <span className="font-medium text-blue-700 text-base">{amenity.name}</span>
+                    <span className="font-medium text-blue-700">{amenity.name}</span>
                   </motion.div>
                 ))}
               </div>
+              <div className="mt-12 relative h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-100">
+                <Image
+                  src="https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg?auto=compress&w=1200"
+                  alt="Amenities View"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </TabsContent>
-            <TabsContent value="specifications" className="mt-6 sm:mt-8">
+            <TabsContent value="specifications" className="mt-8">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-100 min-h-[28rem]">
+                {/* Background Image */}
                 <Image
                   src={project.images.specifications}
                   alt="Specifications Background"
@@ -251,33 +261,33 @@ export default function SanviSankalpamPage() {
                   className="object-cover"
                   style={{ zIndex: 0 }}
                 />
+                {/* Overlay for readability */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-blue-50/80 to-blue-100/80 z-10" />
-                <div className="relative z-20 p-4 sm:p-8 md:p-16">
-                  <h3 className="text-xl sm:text-3xl font-extrabold text-blue-700 mb-4 sm:mb-10 text-center tracking-tight uppercase drop-shadow-lg">
+                {/* Content */}
+                <div className="relative z-20 p-8 md:p-16">
+                  <h3 className="text-3xl font-extrabold text-blue-700 mb-10 text-center tracking-tight uppercase drop-shadow-lg">
                     Detailed Specifications
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {Object.entries(project.specifications || {}).map(([key, value], i) => (
                       <div
                         key={key}
-                        className="bg-white/90 rounded-2xl shadow-md border border-blue-100 p-4 sm:p-6 flex flex-col gap-2 hover:shadow-xl transition-shadow duration-300"
+                        className="bg-white/80 rounded-2xl shadow-md border border-blue-100 p-6 flex flex-col gap-2 hover:shadow-xl transition-shadow duration-300"
                       >
-                        <span className="flex items-center gap-2 font-semibold text-blue-700 text-base sm:text-lg capitalize">
+                        <span className="flex items-center gap-2 font-semibold text-blue-700 text-lg capitalize">
                           <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
                           {key}
                         </span>
-                        <p className="text-gray-700 text-sm sm:text-base pl-7">{value}</p>
+                        <p className="text-gray-700 text-base pl-7">{value}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
             </TabsContent>
-            <TabsContent value="nearby" className="mt-6 sm:mt-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-center text-blue-700 mb-6 sm:mb-8">
-                Convenience at Your Doorstep
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+            <TabsContent value="nearby" className="mt-8">
+              <h3 className="text-2xl font-semibold text-center text-blue-700 mb-8">Convenience at Your Doorstep</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   { name: "Nexus Whitefield Mall", distance: "5 km", img: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&w=600" },
                   { name: "Manipal Hospital, Whitefield", distance: "6 km", img: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&w=600" },
@@ -289,9 +299,9 @@ export default function SanviSankalpamPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.15 }}
-                    className="bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-blue-100"
+                    className="bg-white p-6 rounded-2xl shadow-xl overflow-hidden relative group flex gap-4 items-center border border-blue-100"
                   >
-                    <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow mr-4">
+                    <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow">
                       <Image
                         src={location.img}
                         alt={location.name}
@@ -300,14 +310,93 @@ export default function SanviSankalpamPage() {
                       />
                     </div>
                     <div>
-                      <h4 className="text-lg sm:text-xl font-semibold text-gray-800">{location.name}</h4>
-                      <p className="text-blue-700 font-bold text-sm sm:text-base">{location.distance}</p>
+                      <h4 className="text-xl font-semibold text-gray-800">{location.name}</h4>
+                      <p className="text-blue-700 font-bold">{location.distance}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Location Map Section */}
+      <section className="py-14">
+        <div className="max-w-5xl mx-auto space-y-6 px-4 sm:px-8">
+          <h3 className="text-2xl font-bold text-blue-700 font-serif">Find Us in Bangalore</h3>
+          <div className="relative h-[400px] w-full rounded-lg overflow-hidden border border-blue-200 hover:border-blue-400 transition-all duration-300 group">
+            <Image
+              src="/bangalore-city-map.png"
+              alt="Sanvi Sankalpam Location - Bangalore City Map"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw"
+            />
+
+            {/* Interactive Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+
+            {/* Location Marker */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-lg animate-pulse"></div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-blue-900/90 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Sanvi Sankalpam
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="bg-white/80 p-6 md:p-8 max-w-md text-center border border-blue-200 group-hover:border-blue-400 transition-all duration-300 rounded-xl shadow-lg">
+                <h4 className="text-xl md:text-2xl font-serif font-light text-blue-700 mb-3">Visit Our Project</h4>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Located in the peaceful Nagondanahalli area, close to Whitefield and major tech parks.
+                </p>
+                <div className="w-12 h-px bg-blue-300 mx-auto mb-3"></div>
+                <a
+                  href="https://www.google.com/maps/place/XQ9C%2BH9F+Sanvi+Sankalpam,+Nagondanahalli,+Bengaluru,+Karnataka+560067"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-700 hover:text-blue-900 transition-colors text-sm inline-flex items-center gap-2 font-medium"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Location Details */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <h4 className="text-blue-700 font-semibold mb-2">Nearby Landmarks</h4>
+              <p className="text-blue-900/70 text-sm">Nexus Whitefield Mall, ITPL, Phoenix MarketCity</p>
+            </div>
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <h4 className="text-blue-700 font-semibold mb-2">Transportation</h4>
+              <p className="text-blue-900/70 text-sm">Metro, Bus, Cab Services Available</p>
+            </div>
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <h4 className="text-blue-700 font-semibold mb-2">Parking</h4>
+              <p className="text-blue-900/70 text-sm">Ample parking space available</p>
+            </div>
+          </div>
+
+          {/* Direct link to Google Maps */}
+          <div className="text-center">
+            <a
+              href="https://www.google.com/maps/place/XQ9C%2BH9F+Sanvi+Sankalpam,+Nagondanahalli,+Bengaluru,+Karnataka+560067"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors font-medium bg-blue-50 px-6 py-3 rounded-lg border border-blue-200 hover:border-blue-400 mt-4"
+            >
+              <MapPin className="h-5 w-5" />
+              Open in Google Maps
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"
 import { MapPin, Building, Calendar, Phone, Mail, CheckCircle, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -416,10 +417,93 @@ export default function PrashiResidencyPage() {
                 <span>info@prashiresidency.com</span>
               </div>
             </div>
+            <Link href = "/contact?project=prashi-residency">
             <Button className="mt-8 bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold">
               Schedule a Visit
             </Button>
+            </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Location Map Section */}
+      <section className="py-14">
+        <div className="max-w-6xl mx-auto space-y-6 px-4 sm:px-8">
+          <h3 className="text-2xl font-bold text-purple-700 font-serif">Find Us in Bangalore</h3>
+          <div className="relative h-[400px] w-full rounded-lg overflow-hidden border border-purple-200 hover:border-purple-400 transition-all duration-300 group">
+            <Image
+              src="/bangalore-city-map.png"
+              alt="Prashi Residency Location - Bangalore City Map"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw"
+            />
+
+            {/* Interactive Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+
+            {/* Location Marker */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="w-6 h-6 bg-purple-600 rounded-full border-4 border-white shadow-lg animate-pulse"></div>
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-purple-900/90 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Prashi Residency
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Elements */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="bg-white/80 p-6 md:p-8 max-w-md text-center border border-purple-200 group-hover:border-purple-400 transition-all duration-300 rounded-xl shadow-lg">
+                <h4 className="text-xl md:text-2xl font-serif font-light text-purple-700 mb-3">Visit Our Project</h4>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Located in Belathur, Whitefield, close to major tech parks and amenities.
+                </p>
+                <div className="w-12 h-px bg-purple-300 mx-auto mb-3"></div>
+                <a
+                  href="https://www.google.com/maps/place/Belathur,+Whitefield,+Bangalore,+Karnataka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-700 hover:text-purple-900 transition-colors text-sm inline-flex items-center gap-2 font-medium"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Location Details */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+              <h4 className="text-purple-700 font-semibold mb-2">Nearby Landmarks</h4>
+              <p className="text-purple-900/70 text-sm">
+                Hope Farm Metro, Prestige Shantiniketan Mall, Sathya Sai Hospital
+              </p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+              <h4 className="text-purple-700 font-semibold mb-2">Transportation</h4>
+              <p className="text-purple-900/70 text-sm">Metro, Bus, Cab Services Available</p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg border border-purple-100">
+              <h4 className="text-purple-700 font-semibold mb-2">Parking</h4>
+              <p className="text-purple-900/70 text-sm">Ample parking space available</p>
+            </div>
+          </div>
+
+          {/* Direct link to Google Maps */}
+          <div className="text-center">
+            <a
+              href="https://www.google.com/maps/place/Belathur,+Whitefield,+Bangalore,+Karnataka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-purple-700 hover:text-purple-900 transition-colors font-medium bg-purple-50 px-6 py-3 rounded-lg border border-purple-200 hover:border-purple-400 mt-4"
+            >
+              <MapPin className="h-5 w-5" />
+              Open in Google Maps
+            </a>
+          </div>
         </div>
       </section>
 

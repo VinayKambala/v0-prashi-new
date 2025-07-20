@@ -119,15 +119,15 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <h3 className="font-semibold text-gold text-lg">Phone Number</h3>
-                        <div className="space-y-1">
-                          <p className="text-obsidian/70">
-                            <a href="tel:+918971199588" className="hover:text-gold transition-colors">
-                              +91 89711 99588
+                        <div className="space-y-1">                     
+                          <p className="text-black/70">
+                            <a href="tel:+919606471392" className="hover:text-gold transition-colors">
+                              +91 9606471392
                             </a>
                           </p>
-                          <p className="text-white/70">
-                            <a href="tel:+918971199577" className="hover:text-gold transition-colors">
-                              +91 89711 99577
+                           <p className="text-black/70">
+                            <a href="tel:+919346070797" className="hover:text-gold transition-colors">
+                              +91 9346070797
                             </a>
                           </p>
                         </div>
@@ -166,9 +166,7 @@ export default function ContactPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-gold text-lg">Office Hours</h3>
                         <div className="space-y-1 text-obsidian/70">
-                          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                          <p>Saturday: 10:00 AM - 4:00 PM</p>
-                          <p>Sunday: Closed (By appointment only)</p>
+                          <p>Everyday: 9:00 AM - 6:00 PM</p>
                         </div>
                       </div>
                     </CardContent>
@@ -257,20 +255,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-1">
               <div className="sticky top-8">
-                <Card className="luxury-card shadow-gold-lg">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
-                      <div className="space-y-3">
-                        <h3 className="text-2xl font-bold text-gold font-serif drop-shadow-sm">Send Message</h3>
-                        <div className="w-12 h-px bg-gradient-to-r from-gold to-transparent"></div>
-                        <p className="text-obsidian/90 leading-relaxed">
-                          Fill out the form below and we'll get back to you within 24 hours.
-                        </p>
-                      </div>
-                      <ContactForm />
-                    </div>
-                  </CardContent>
-                </Card>
+                <ContactForm />
               </div>
             </div>
           </div>
