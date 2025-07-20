@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 // Import the premium header
 import PremiumHeader from "@/components/premium-header"
-import Footer from "@/components/footer"
+import PremiumFooter from "@/components/premium-footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Inter } from "next/font/google"
 
@@ -27,7 +27,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <PremiumHeader />
             <main className="flex-1 pt-20 md:pt-24">{children}</main>
-            <Footer />
+            <PremiumFooter />
           </div>
         </ThemeProvider>
       </body>

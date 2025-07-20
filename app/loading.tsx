@@ -13,7 +13,7 @@ export default function Loading() {
             style={{ animationDuration: "1.5s" }}
           ></div>
         </div>
-        <p className="mt-4 text-white text-lg font-medium">Loading 3D Experience...</p>
+        <p className="mt-4 text-white text-lg font-medium">Loading ...</p>
       </div>
     </div>
   )
