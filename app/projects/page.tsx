@@ -8,8 +8,8 @@ import Link from "next/link"
 import { ArrowRight, MapPin, Calendar, Building, Search } from "lucide-react"
 
 const projectCategories = [
-  { id: "all", label: "All Projects", count: 2 },
-  { id: "ongoing", label: "Ongoing", count: 0 },
+  { id: "all", label: "All Projects", count: 3 },
+  { id: "ongoing", label: "Ongoing", count: 1 },
   { id: "completed", label: "Completed", count: 2 },
   { id: "upcoming", label: "Upcoming", count: 0 },
 ]
@@ -32,16 +32,30 @@ const allProjects = [
   {
     id: 2,
     title: "Sanvi Residency",
-    location: "Hosanara, New Bangalore, Karnataka",
+    location: "33,Horamavu Agara Road,Rajanna Layout,Bangalore, Karnataka, 560043",
     type: "Residential Apartments",
     category: "completed",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency.png-RWfRtQWkkbSrf3Kdwl1oMtNkUsMfXW.jpeg",
     status: "Completed",
     completion: "Delivered",
-    units: "2 & 3 BHK Apartments",
+    units: "48 units with Commencement certificate and occupancy certificate.",
     description:
       "Our flagship project in Hosanara, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
+  },
+  {
+    id: 3,
+    title: "Prashi Residency",
+    location: "Belathur, WhiteField",
+    type: "Residential Apartments",
+    category: "ongoing",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency.png-RWfRtQWkkbSrf3Kdwl1oMtNkUsMfXW.jpeg",
+    status: "Ongoing",
+    completion: "Ongoing",
+    units: "2 & 3 BHK Apartments",
+    description:
+      "Our flagship project in WhiteFiel, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
   },
 ]
 
