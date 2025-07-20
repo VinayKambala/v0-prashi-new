@@ -41,18 +41,9 @@ export default function Logo({
       <Link href="/" className={`relative z-10 ${className}`}>
         <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
           <div className={`relative ${sizeClasses[size]} flex-shrink-0`}>
-            <Image
-              src="/logo.png"
-              alt="Prashi Group Logo Symbol"
-              width={40} // Explicitly set width to 40px
-              height={40} // Explicitly set height to 40px
-              className="object-contain" // Ensure the entire image is visible
-              priority
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.src = "/placeholder.svg?height=40&width=40&text=P" // Fallback with appropriate size
-              }}
-            />
+            <img src="/logo.png" alt="Prashi Group Logo Symbol" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+            {/* If you still want a fallback, add an onError handler to this <img> tag. */}
+            {/* onError={(e) => (e.currentTarget as HTMLImageElement).src = "/placeholder.svg?height=40&width=40&text=P"}  */}
           </div>
         </motion.div>
       </Link>
