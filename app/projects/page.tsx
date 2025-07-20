@@ -19,6 +19,7 @@ const allProjects = [
   {
     id: 1,
     title: "Sanvi Sankalpam",
+    slug: "sanvi-sankalpam",
     location: "XQ9C+H9F, Nagondanahalli, Bengaluru, Karnataka 560067",
     type: "Residential Apartments",
     category: "completed",
@@ -32,11 +33,12 @@ const allProjects = [
   {
     id: 2,
     title: "Sanvi Residency",
+    slug: "sanvi-residency",
     location: "33,Horamavu Agara Road,Rajanna Layout,Bangalore, Karnataka, 560043",
     type: "Residential Apartments",
     category: "completed",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency.png-RWfRtQWkkbSrf3Kdwl1oMtNkUsMfXW.jpeg",
+      "/sanvi-residency.png",
     status: "Completed",
     completion: "Delivered",
     units: "48 units with Commencement certificate and occupancy certificate.",
@@ -46,11 +48,12 @@ const allProjects = [
   {
     id: 3,
     title: "Prashi Residency",
+    slug: "prashi-residency",
     location: "Belathur, WhiteField",
     type: "Residential Apartments",
     category: "ongoing",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sanvi-residency.png-RWfRtQWkkbSrf3Kdwl1oMtNkUsMfXW.jpeg",
+      "/prashi-residency.jpeg",
     status: "Ongoing",
     completion: "Ongoing",
     units: "2 & 3 BHK Apartments",
@@ -146,7 +149,7 @@ export default function ProjectsPage() {
                       ${
                         activeCategory === category.id
                           ? "bg-gold text-obsidian border-gold shadow-gold-md"
-                          : "bg-transparent text-black border-gold/30 hover:border-gold/60 hover:bg-gold/5"
+                          : "bg-transparent text-white border-gold/30 hover:border-gold/60 hover:bg-gold/5"
                       }
                     `}
                     whileHover={{ scale: 1.02 }}
@@ -157,7 +160,7 @@ export default function ProjectsPage() {
                       <span
                         className={`
                         text-xs px-1.5 py-0.5 rounded-full
-                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-obsidian/20 text-obsidian"}
+                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-gold/20 text-white"}
                       `}
                       >
                         {category.count}
@@ -194,11 +197,11 @@ export default function ProjectsPage() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      <span className="truncate text-black">{category.label}</span>
+                      <span className="truncate">{category.label}</span>
                       <span
                         className={`
                         text-xs px-1.5 py-0.5 rounded-full
-                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-obsidian/20 text-gold"}
+                        ${activeCategory === category.id ? "bg-obsidian/20 text-obsidian" : "bg-gold/20 text-white"}
                       `}
                       >
                         {category.count}
@@ -258,10 +261,10 @@ export default function ProjectsPage() {
                             px-3 py-1 text-xs uppercase tracking-wider font-medium
                             ${
                               project.category === "ongoing"
-                                ? "bg-blue-500/90 text-black"
+                                ? "bg-blue-500/90 text-white"
                                 : project.category === "completed"
-                                  ? "bg-green-500/90 text-black"
-                                  : "bg-orange-500/90 text-black"
+                                  ? "bg-green-500/90 text-white"
+                                  : "bg-orange-500/90 text-white"
                             }
                           `}
                           >
@@ -299,7 +302,7 @@ export default function ProjectsPage() {
 
                         {/* CTA Button */}
                         <Link
-                          href={`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
+                          href={`/projects/${project.slug}`}
                           className="group/btn flex items-center justify-between w-full p-4 border border-gold/30 text-gold hover:bg-gold/5 transition-all duration-300 mt-6"
                         >
                           <span className="uppercase tracking-wider text-xs">View Details</span>
@@ -340,8 +343,8 @@ export default function ProjectsPage() {
                       </>
                     ) : activeCategory === "ongoing" ? (
                       <>
-                        <h3 className="text-black text-xl lg:text-2xl font-serif mb-4">No Ongoing Projects</h3>
-                        <p className="text-black/60 text-base mb-8 leading-relaxed">
+                        <h3 className="text-white text-xl lg:text-2xl font-serif mb-4">No Ongoing Projects</h3>
+                        <p className="text-white/60 text-base mb-8 leading-relaxed">
                           We currently don't have any ongoing projects. Please check our completed projects or stay
                           tuned for future developments.
                         </p>

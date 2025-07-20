@@ -31,11 +31,11 @@ const PremiumFooter = () => {
     },
   };
 
-  // Data for social media links
+  // Data for social media links (kept for reference, but not rendered)
   const socialLinks = [
     { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/prashigroup" },
     { name: "Twitter", icon: Twitter, href: "https://twitter.com/prashigroup" },
-    { name: "Instagram", icon: "https://placehold.co/24x24/000000/FFFFFF?text=IG", href: "https://www.instagram.com/prashigroup" }, // Using placeholder for example
+    { name: "Instagram", icon: "https://placehold.co/24x24/000000/FFFFFF?text=IG", href: "https://www.instagram.com/prashigroup" },
     { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/prashigroup" },
   ];
 
@@ -59,7 +59,7 @@ const PremiumFooter = () => {
         variants={footerVariants}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 lg:gap-12"> {/* Changed to lg:grid-cols-3 */}
 
           {/* Column 1: Logo & About */}
           <motion.div variants={itemVariants} className="flex flex-col items-start">
@@ -144,47 +144,7 @@ const PremiumFooter = () => {
             </ul>
           </motion.div>
 
-          {/* Column 4: Social Media & Newsletter (Optional) */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-white font-semibold text-lg mb-4 border-b border-gold/20 pb-2 inline-block">Connect With Us</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gold hover:text-white transition-all duration-300 shadow-md"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label={social.name}
-                >
-                  {typeof social.icon === 'string' ? ( // Check if icon is a string (URL for Image)
-                    <Image src={social.icon} alt={social.name} width={24} height={24} />
-                  ) : (
-                    <social.icon className="w-5 h-5" />
-                  )}
-                </motion.a>
-              ))}
-            </div>
-            {/* You can add a newsletter signup form here if needed */}
-            {/* <div className="mt-6">
-              <h4 className="text-white font-medium mb-2">Stay Updated</h4>
-              <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-grow p-3 rounded-l-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-gold"
-                />
-                <button
-                  type="submit"
-                  className="bg-gold text-white p-3 rounded-r-lg hover:bg-gold-dark transition-colors duration-300"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div> */}
-          </motion.div>
+          {/* Removed Column 4: Social Media & Newsletter (Optional) */}
         </div>
 
         {/* Bottom Bar - Copyright */}
