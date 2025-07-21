@@ -12,10 +12,10 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 
 const projectCategories = [
-  { id: "all", label: "All Projects", count: 3 },
+  { id: "all", label: "All Projects", count: 5 },
   { id: "ongoing", label: "Ongoing", count: 1 },
   { id: "completed", label: "Completed", count: 2 },
-  { id: "upcoming", label: "Upcoming", count: 0 },
+  { id: "upcoming", label: "Upcoming", count: 2 },
 ]
 
 const allProjects = [
@@ -70,6 +70,40 @@ const allProjects = [
     price: "₹55 L - ₹95 L",
     area: "1300-2200 sq ft",
     possession: "Dec 2025",
+  },
+  {
+    id:4,
+    title: "Project-1",
+    slug: "project-1",
+    location: "Budhigere Road, near mandhur village, Bengaluru, Karnataka 562114",
+    type: "Residential Villas",
+    category: "upcoming",
+    image: "/project1.jpeg?height=400&width=600&text=Prashi+Residency",
+    status: "Upcoming",
+    completion: "Under planning",
+    units: "2 & 3 BHK Apartments",
+    description:
+      "Our flagship project in Budhigere, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
+    price: "₹55 L - ₹95 L",
+    area: "13 acres",
+    possession: "Dec 2026",
+  },
+  {
+    id:5,
+    title: "Project-2",
+    slug: "project-2",
+    location: "Budhigere Road, near mandhur village, Bengaluru, Karnataka 562114",
+    type: "Residential Apartments",
+    category: "upcoming",
+    image: "/project2.jpeg?height=400&width=600&text=Prashi+Residency",
+    status: "Upcoming",
+    completion: "Under planning",
+    units: "2 & 3 BHK Apartments",
+    description:
+      "Our flagship project in WhiteField, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
+    price: "₹55 L - ₹95 L",
+    area: "2 acres",
+    possession: "Dec 2026",
   },
 ]
 
