@@ -12,8 +12,8 @@ export default function ContactSection() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: ["+91 89711 99588", "+91 89711 99577"],
-      action: "tel:+918971199588",
+      details: ["+91 9346070797", "+91 9606471392"],
+      action: "tel:+919606471392",
     },
     {
       icon: <Mail className="h-6 w-6" />,
@@ -32,7 +32,7 @@ export default function ContactSection() {
   const whyChooseUs = [
     {
       icon: <Award className="h-8 w-8" />,
-      title: "15+ Years Experience",
+      title: "10+ Years Experience",
       description: "Proven track record in construction excellence",
     },
     {
@@ -43,7 +43,7 @@ export default function ContactSection() {
     {
       icon: <Users className="h-8 w-8" />,
       title: "Customer Satisfaction",
-      description: "500+ happy families trust our services",
+      description: "1000+ happy families trust our services",
     },
   ]
 
@@ -121,9 +121,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-semibold text-dark-gray mb-2">Business Hours</h4>
                       <div className="space-y-1 text-sm text-dark-gray/70">
-                        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-                        <p>Saturday: 10:00 AM - 4:00 PM</p>
-                        <p>Sunday: By Appointment</p>
+                        <p>Everyday: 9:00 AM - 6:00 PM</p>
                       </div>
                     </div>
                   </div>

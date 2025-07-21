@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"
 import { useState } from "react";
 import { MapPin, Building, Calendar, Compass, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -418,9 +419,11 @@ export default function SanviResidencyPage() {
               Interested in Sanvi Residency? Contact us today to learn more or
               schedule a visit.
             </p>
+            <Link href="/contact">
             <Button className="mt-8 bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold">
               Schedule a Visit
             </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -67,17 +67,12 @@ const PremiumFooter = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-gold/10 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
                 <div className="relative h-14 w-14 bg-gradient-to-br from-white to-gray-50 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <Image
+                  <img
                     src="/logo.svg"
                     alt="Prashi Group Logo"
                     width={36}
                     height={36}
                     className="object-contain transition-transform duration-300 group-hover:scale-110"
-                    priority
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://placehold.co/36x36/000000/FFFFFF?text=P"; // Fallback placeholder
-                    }}
                   />
                 </div>
               </div>

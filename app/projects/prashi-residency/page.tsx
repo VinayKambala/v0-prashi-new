@@ -410,11 +410,11 @@ export default function PrashiResidencyPage() {
             <div className="flex flex-col md:flex-row justify-center items-center gap-6">
               <div className="flex items-center space-x-3">
                 <Phone className="w-6 h-6" />
-                <span>+91-123-456-7890</span>
+                <span>+91 96064713920</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-6 h-6" />
-                <span>info@prashiresidency.com</span>
+                <span>info@prashigroup.com</span>
               </div>
             </div>
             <Link href = "/contact?project=prashi-residency">

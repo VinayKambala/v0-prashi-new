@@ -10,7 +10,7 @@ import { CheckCircle2, Award, Users, Building2, Clock, Calendar } from "lucide-r
 
 export default function AboutSection() {
   const achievements = [
-    { icon: <Building2 className="h-8 w-8" />, number: "50+", label: "Projects Completed", sublabel: "Since 2014" },
+    { icon: <Building2 className="h-8 w-8" />, number: "10+", label: "Projects Completed", sublabel: "Since 2014" },
     { icon: <Users className="h-8 w-8" />, number: "1000+", label: "Happy Families", sublabel: "Across Bengaluru" },
     { icon: <Award className="h-8 w-8" />, number: "10+", label: "Years Legacy", sublabel: "Combined Experience" },
     { icon: <Clock className="h-8 w-8" />, number: "100%", label: "On-Time Delivery", sublabel: "Every Project" },

@@ -461,19 +461,14 @@ export default function ProjectsPage() {
               Explore our premium properties and discover the perfect space for your lifestyle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href = "/contact">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8"
               >
                 Schedule Site Visit
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
-              >
-                Download Brochure
-              </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

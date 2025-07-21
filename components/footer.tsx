@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Logo variant="text-only" size="md" textColor="light" className="inline-block mb-6" />
+            <Logo variant="default" size="md" textColor="light" className="inline-block mb-6" />
             <p className="text-white/70 mb-6">Your Heart's Destination</p>
           </div>
 
@@ -100,7 +100,7 @@ export default function Footer() {
                   />
                 </svg>
                 <span className="text-white/70">
-                  100 Main Street, Whitefield, <br />
+                  21, Whitefield - Hoskote Rd, Vastu Bhoomi, <br />
                   Bengaluru, Karnataka 560066
                 </span>
               </li>
@@ -119,7 +119,7 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span className="text-white/70">+91 98765 43210</span>
+                <span className="text-white/70">+91 9606471392</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg
