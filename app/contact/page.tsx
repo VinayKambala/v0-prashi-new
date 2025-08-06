@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Dark Office Background */}
-      <section className="relative h-[500px] flex items-center overflow-hidden">
+      <section className="relative h-[700px] flex items-center overflow-hidden pt-24 sm:pt-28 lg:pt-32">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image

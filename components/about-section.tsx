@@ -45,7 +45,7 @@ export default function AboutSection() {
           </h2>
           <div className="gold-divider-center"></div>
           <p className="text-dark-gray/80 max-w-3xl mx-auto text-lg leading-relaxed mt-6">
-            From <strong>Saanvi Group</strong> to <strong>Prashi Group</strong> — A decade-long journey of building
+            From <strong>Sanvi Group</strong> to <strong>Prashi Group</strong> — A decade-long journey of building
             trust, delivering excellence, and creating homes that exceed expectations in Bengaluru.
           </p>
         </motion.div>
@@ -64,12 +64,12 @@ export default function AboutSection() {
               <div className="space-y-4 text-dark-gray/80 text-lg leading-relaxed">
                 <p>
                   <strong className="text-dark-gray">Prashi Group</strong>, formerly known as{" "}
-                  <strong className="text-dark-gray">Saanvi Group</strong>, was founded in{" "}
+                  <strong className="text-dark-gray">Sanvi Group</strong>, was founded in{" "}
                   <strong className="text-gold">2014</strong> by visionary builders who recognized Bengaluru's immense
                   real estate potential.
                 </p>
                 <p>
-                  Over the years, we successfully completed numerous premium projects under the Saanvi Group name,
+                  Over the years, we successfully completed numerous premium projects under the Sanvi Group name,
                   establishing a strong foundation of trust and excellence in the industry.
                 </p>
                 <p>

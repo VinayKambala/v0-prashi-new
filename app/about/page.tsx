@@ -25,14 +25,14 @@ export default function AboutPage() {
   const milestones = [
     {
       year: "2014",
-      title: "Foundation as Saanvi Group",
+      title: "Foundation as Sanvi Group",
       description: "Started our journey with a vision to transform Bengaluru's real estate landscape",
       icon: <Building2 className="h-6 w-6" />,
     },
     {
       year: "2015-2023",
       title: "Building Excellence",
-      description: "Successfully completed numerous premium residential projects under Saanvi Group",
+      description: "Successfully completed numerous premium residential projects under Sanvi Group",
       icon: <TrendingUp className="h-6 w-6" />,
     },
     {
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-xl text-dark-gray/80 leading-relaxed">
-                From <strong>Saanvi Group</strong> to <strong>Prashi Group</strong> — A decade-long journey of building
+                From <strong>Sanvi Group</strong> to <strong>Prashi Group</strong> — A decade-long journey of building
                 trust, delivering excellence, and creating homes that exceed expectations.
               </p>
 
@@ -187,14 +187,14 @@ export default function AboutPage() {
             >
               <p className="text-xl leading-relaxed">
                 <strong className="text-dark-gray">Prashi Group</strong>, formerly known as{" "}
-                <strong className="text-dark-gray">Saanvi Group</strong>, was originally founded in{" "}
+                <strong className="text-dark-gray">Sanvi Group</strong>, was originally founded in{" "}
                 <strong className="text-gold">2014</strong> by a family of visionary builders who recognized the immense
                 potential in Bengaluru's rapidly evolving real estate landscape.
               </p>
 
               <p>
                 Over the years, our dedicated team successfully completed numerous premium real estate projects under
-                the Saanvi Group name, establishing a strong foundation of trust and excellence in the industry. Each
+                the Sanvi Group name, establishing a strong foundation of trust and excellence in the industry. Each
                 project was a testament to our unwavering commitment to quality construction, innovative design, and
                 customer satisfaction.
               </p>
@@ -214,7 +214,7 @@ export default function AboutPage() {
               </p>
 
               <p>
-                Under the same visionary leadership that guided Saanvi Group to success, Prashi Group has built an
+                Under the same visionary leadership that guided Sanvi Group to success, Prashi Group has built an
                 enviable reputation for strong customer relationships, high satisfaction rates, and strategic management
                 with a clear vision for the future. Our dedication ensures that every project not only meets but exceeds
                 the expectations of modern homeowners.

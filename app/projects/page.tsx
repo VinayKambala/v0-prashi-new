@@ -34,7 +34,7 @@ const allProjects = [
     description:
       "A heavenly sight right at your doorstep. Modern residential apartments with contemporary design and premium amenities in Nagondanahalli.",
     price: "₹45 L - ₹85 L",
-    area: "1200-2100 sq ft",
+    area: "1100-1460 sq ft",
     possession: "Ready to Move",
   },
   {
@@ -51,7 +51,7 @@ const allProjects = [
     description:
       "Our flagship project in Hosanara, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
     price: "₹38 L - ₹72 L",
-    area: "1100-1900 sq ft",
+    area: "1100-1460 sq ft",
     possession: "Ready to Move",
   },
   {
@@ -92,7 +92,7 @@ const allProjects = [
     id:5,
     title: "Project-2",
     slug: "project-2",
-    location: "Budhigere Road, near mandhur village, Bengaluru, Karnataka 562114",
+    location: "Soukya Road, WhiteField, Bengaluru, Karnataka",
     type: "Residential Apartments",
     category: "upcoming",
     image: "/project2.jpeg?height=400&width=600&text=Prashi+Residency",

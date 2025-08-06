@@ -130,7 +130,6 @@ export default function SanviResidencyPage() {
                   {approval.icon}
                   <div className="text-left">
                     <div className="font-semibold text-sm">{approval.name}</div>
-                    <div className="text-xs opacity-80">{approval.number}</div>
                   </div>
                 </motion.div>
               ))}

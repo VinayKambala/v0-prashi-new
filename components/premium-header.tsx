@@ -204,7 +204,7 @@ export default function PremiumHeader() {
                     style={{ fontFamily: "'Cinzel', 'Playfair Display', serif" }}
                   >
                     <span className="text-gold font-bold tracking-wide">Prashi</span>
-                    <span className="font-light ml-2 tracking-wide">group</span>
+                    <span className="font-light ml-2 tracking-wide text-gold">group</span>
                   </div>
                   <div
                     className="text-sm md:text-base lg:text-lg font-light tracking-[0.2em] text-gray-600/80 uppercase mt-1"

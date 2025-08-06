@@ -20,10 +20,10 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-cream">
+    <>
       <HeroSection />
       <AboutSection />
       <ContactSection />
-    </div>
+    </>
   )
 }
