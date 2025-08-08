@@ -68,8 +68,8 @@ const allProjects = [
     description:
       "Our flagship project in WhiteField, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
     price: "₹55 L - ₹95 L",
-    area: "1300-2200 sq ft",
-    possession: "Dec 2025",
+    area: "1045-1630 sq ft",
+    possession: "Dec 2026",
   },
   {
     id:4,
@@ -83,10 +83,10 @@ const allProjects = [
     completion: "Under planning",
     units: "2 & 3 BHK Apartments",
     description:
-      "Our flagship project in Budhigere, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
+      "Our flagship project in Budhigere, featuring exclusive villas with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
     price: "₹55 L - ₹95 L",
     area: "13 acres",
-    possession: "Dec 2026",
+    possession: "Under Development",
   },
   {
     id:5,
@@ -100,10 +100,10 @@ const allProjects = [
     completion: "Under planning",
     units: "2 & 3 BHK Apartments",
     description:
-      "Our flagship project in WhiteField, featuring exclusive G+3 apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
+      "Our flagship project in WhiteField, featuring exclusive apartments with modern amenities. 100% Vastu compliant design with uninterrupted power and water supply for worry-free living.",
     price: "₹55 L - ₹95 L",
     area: "2 acres",
-    possession: "Dec 2026",
+    possession: "Under Development",
   },
 ]
 

@@ -207,7 +207,7 @@ export default function PremiumHeader() {
                     <span className="font-light ml-2 tracking-wide text-gold">group</span>
                   </div>
                   <div
-                    className="text-sm md:text-base lg:text-lg font-light tracking-[0.2em] text-gray-600/80 uppercase mt-1"
+                    className="text-[0.45rem] md:text-[0.7rem] lg:text-xs font-light tracking-[0.2em] text-gray-500 uppercase mt-1 ml-2"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     on the move always

@@ -171,7 +171,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium mb-4 block">Our Legacy</span>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-dark-gray mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-dark-gray mb-6 text-center">
               A Decade of <span className="text-gradient-gold">Excellence</span>
             </h2>
             <div className="gold-divider-center"></div>
@@ -183,23 +183,23 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="prose prose-lg max-w-none text-dark-gray/80 leading-relaxed space-y-6"
+              className="prose prose-lg max-w-none text-dark-gray/80 leading-relaxed space-y-6 text-justify"
             >
-              <p className="text-xl leading-relaxed">
+              <p className="text-xl leading-relaxed hyphens-auto">
                 <strong className="text-dark-gray">Prashi Group</strong>, formerly known as{" "}
                 <strong className="text-dark-gray">Sanvi Group</strong>, was originally founded in{" "}
                 <strong className="text-gold">2014</strong> by a family of visionary builders who recognized the immense
                 potential in Bengaluru's rapidly evolving real estate landscape.
               </p>
 
-              <p>
+              <p className="hyphens-auto">
                 Over the years, our dedicated team successfully completed numerous premium real estate projects under
                 the Sanvi Group name, establishing a strong foundation of trust and excellence in the industry. Each
                 project was a testament to our unwavering commitment to quality construction, innovative design, and
                 customer satisfaction.
               </p>
 
-              <p>
+             <p className="hyphens-auto">
                 In <strong className="text-gold">2024</strong>, we evolved into a new organization —{" "}
                 <strong className="text-dark-gray">Prashi Group</strong> — to better serve the future needs of
                 homebuyers in Bengaluru. This transformation represents not just a rebranding, but a strategic evolution
@@ -213,7 +213,7 @@ export default function AboutPage() {
                 evolving demands of our customers by offering thoughtfully designed homes and apartments.
               </p>
 
-              <p>
+              <p className="hyphens-auto">
                 Under the same visionary leadership that guided Sanvi Group to success, Prashi Group has built an
                 enviable reputation for strong customer relationships, high satisfaction rates, and strategic management
                 with a clear vision for the future. Our dedication ensures that every project not only meets but exceeds
